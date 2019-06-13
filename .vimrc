@@ -26,8 +26,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 
 " インデントに色を付けて見やすくする
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
+" Plug 'nathanaelkane/vim-indent-guides'
+" let g:indent_guides_enable_on_vim_startup = 1
 " ログファイルを色づけしてくれる
 Plug 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化
