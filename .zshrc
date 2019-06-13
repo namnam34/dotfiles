@@ -5,24 +5,30 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
+# alias
+alias lst='ls -lt -G'
+alias l='ls -t -G'
+alias la='ls -la -G'
+alias ll='ls -l -G'
+
 ### plugin
 # completion
 zplugin ice wait"0" blockf
 zplugin light zsh-users/zsh-completions
 
-# Gitの補完と大量のエイリアスを定義するプラグインです。
-# エイリアスは重宝するものが多く、Gitを使うユーザーには必ずオススメしたいプラグインです。
+# Gitの補完と大量のエイリアスを定義するプラグイン
 zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
 
-# GitHub のレポジトリを管理するためのコマンドを定義するプラグインです。
+# GitHub のレポジトリを管理するためのコマンドを定義するプラグイン
 zplugin snippet 'OMZ::plugins/github/github.plugin.zsh'
 
-# .zshrc を zcompile してロードしてくれる src コマンドを定義するプラグインです。
+# .zshrc を zcompile してロードしてくれる src コマンドを定義するプラグイン
 zplugin snippet 'OMZ::plugins/zsh_reload/zsh_reload.plugin.zsh'
 
 # zshテーマ
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
+autoload -Uz compinit
 compinit
 zplugin cdreplay -q
 
