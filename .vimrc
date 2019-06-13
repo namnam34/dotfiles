@@ -12,9 +12,10 @@ Plug 'Shougo/neomru.vim'
 Plug 'scrooloose/nerdtree'
 " Gitを便利に使う
 Plug 'tpope/vim-fugitive'
+" fzfを使う
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
-call plug#end()
-""""""""""""""""""""""""""""""
 " Rails向けのコマンドを提供する
 " Plug 'tpope/vim-rails'
 " Ruby向けにendを自動挿入してくれる
@@ -41,6 +42,7 @@ let g:auto_save = 1
 Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
+"""""""""""""""""""""""""""""""""
 
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
