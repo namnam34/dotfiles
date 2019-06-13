@@ -2,6 +2,6 @@
 # Editors
 #
 
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'

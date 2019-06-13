@@ -1,4 +1,3 @@
-
 ### Added by Zplugin's installer
 source '/Users/rnamba/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
