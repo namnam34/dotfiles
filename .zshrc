@@ -4,6 +4,9 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # alias
 alias lst='ls -lt -G'
 alias l='ls -t -G'
@@ -12,6 +15,8 @@ alias ll='ls -l -G'
 
 # key bind
 bindkey -v
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 
 ### plugin
 # completion
