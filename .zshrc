@@ -4,8 +4,37 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
-# fzf
+###################
+# FZF #
+###################
+# based one Gotham color
+# fg      : ファイル名など、一番多く出る部分
+# hl      : 謎
+# fg+     : 現在カーソルがあたっていて、queryにhitしていない部分
+# hl+     : 現在カーソルがあたっていて、queryにhitしている部分
+# info    : {現在ヒットしている数}/{全体の数} を表示する部分
+# prompt  : 舌でqueryを受け付ける矢印部分
+# spinner : ファイルが多い時に回ってくれる線
+# pointer : 選択中のカーソルにあたる矢印部分
+# marker  : 複数選択したときのやつ
+#export FZF_DEFAULT_OPTS='
+#--color fg:7,hl:9,fg+:14,hl+:3
+#--color info:2,prompt:11,spinner:2,pointer:9,marker:3
+#'
+#
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_TMUX=0
+
+# for go
+export GOPATH="${HOME}/go"
+export PATH="$PATH:${HOME}/go/bin"
+
+# mysql
+PATH=/usr/local/mysql/bin:$PATH
+
 
 # alias
 alias lst='ls -lt -G'
@@ -46,6 +75,9 @@ zplugin light 'zsh-users/zsh-autosuggestions'
 # Directory listings for zsh with git features
 zplugin ice wait'0'
 zplugin light 'supercrabtree/k'
+
+# go plugin pmy
+source "${GOPATH:-${HOME}/go}/src/github.com/relastle/pmy/shell/pmy.zsh"
 
 fbr() {
   local branches branch
