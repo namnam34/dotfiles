@@ -1,5 +1,5 @@
 ### Added by Zplugin's installer
-source '/Users/rnamba/.zplugin/bin/zplugin.zsh'
+source "${HOME}/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
@@ -29,8 +29,10 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_TMUX=0
 
 # for go
-export GOPATH="${HOME}/go"
-export PATH="$PATH:${HOME}/go/bin"
+export GOPATH_LIB=$HOME/.go
+export GOPATH_DEV=$HOME/go
+export GOPATH=$GOPATH_DEV:$GOPATH_LIB
+export PATH=$PATH:$GOPATH_LIB/bin
 
 # mysql
 PATH=/usr/local/mysql/bin:$PATH
@@ -77,7 +79,7 @@ zplugin ice wait'0'
 zplugin light 'supercrabtree/k'
 
 # go plugin pmy
-source "${GOPATH:-${HOME}/go}/src/github.com/relastle/pmy/shell/pmy.zsh"
+# source "${GOPATH:-${HOME}/go}/src/github.com/relastle/pmy/shell/pmy.zsh"
 
 fbr() {
   local branches branch
