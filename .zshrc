@@ -34,9 +34,17 @@ export GOPATH_DEV=$HOME/go
 export GOPATH=$GOPATH_DEV:$GOPATH_LIB
 export PATH=$PATH:$GOPATH_LIB/bin
 
+# for Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# for nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# for android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+
 # mysql
 PATH=/usr/local/mysql/bin:$PATH
-
 
 # alias
 alias lst='ls -lt -G'
@@ -48,6 +56,14 @@ alias ll='ls -l -G'
 bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+
+# history
+export HISTSIZE=100000
+export HISTFILE="${HOME}/.zsh_history"
+export SAVEHIST=100000
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+
 
 ### plugin
 # completion
@@ -80,6 +96,9 @@ zplugin light 'supercrabtree/k'
 
 # go plugin pmy
 # source "${GOPATH:-${HOME}/go}/src/github.com/relastle/pmy/shell/pmy.zsh"
+
+# for pyenv
+eval "$(pyenv init -)"
 
 fbr() {
   local branches branch
