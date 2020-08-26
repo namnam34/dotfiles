@@ -41,6 +41,14 @@ let g:auto_save = 1
 " CSVをカラム単位に色分けする
 Plug 'mechatroner/rainbow_csv'
 
+" go plugin
+Plug 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_gocode_unimported_packages = 1
+
 " jsonnet用
 Plug 'google/vim-jsonnet'
 
