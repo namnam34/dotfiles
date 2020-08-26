@@ -41,6 +41,9 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # for android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
+# for dart
+export PATH=$HOME/Documents/dart/flutter/bin:$PATH
+
 # mysql
 PATH=/usr/local/mysql/bin:$PATH
 
@@ -97,6 +100,10 @@ source "${GOPATH:-${HOME}/go}/src/github.com/relastle/pmy/shell/pmy.zsh"
 
 # for pyenv
 eval "$(pyenv init -)"
+
+# for ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 fbr() {
   local branches branch
